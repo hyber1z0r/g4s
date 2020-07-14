@@ -7,6 +7,9 @@ exports[`should invoke arm command 1`] = `
       "https://mit.g4severhome.dk/ESI.API/API/Commands/invokeAPI",
       Object {
         "body": "{\\"email\\":\\"username\\",\\"password\\":\\"password\\",\\"panelId\\":\\"panelId-123\\",\\"methodToInvoke\\":\\"Arm\\"}",
+        "headers": Object {
+          "Content-Type": "application/json",
+        },
         "method": "POST",
       },
     ],
@@ -27,6 +30,9 @@ exports[`should invoke disarm command 1`] = `
       "https://mit.g4severhome.dk/ESI.API/API/Commands/invokeAPI",
       Object {
         "body": "{\\"email\\":\\"username\\",\\"password\\":\\"password\\",\\"panelId\\":\\"panelId-123\\",\\"methodToInvoke\\":\\"Disarm\\"}",
+        "headers": Object {
+          "Content-Type": "application/json",
+        },
         "method": "POST",
       },
     ],

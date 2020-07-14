@@ -8,11 +8,15 @@ class G4S {
 		this.api = new API(username, password)
 	}
 
-	async armPanel(panelId: string): Promise<void> {
+	async armPanel(panelId: number): Promise<void> {
 		return this.api.armPanel(panelId)
 	}
 
-	async disarmPanel(panelId: string): Promise<void> {
+	async nightArmPanel(panelId: number): Promise<void> {
+		return this.api.nightArmPanel(panelId)
+	}
+
+	async disarmPanel(panelId: number): Promise<void> {
 		return this.api.disarmPanel(panelId)
 	}
 
@@ -23,7 +27,7 @@ class G4S {
 
 	async getArmType(): Promise<ArmType> {
 		const systemStatus = await this.api.getState()
-		return systemStatus.systemState.ArmType
+		return systemStatus.panelState.ArmType
 	}
 }
 

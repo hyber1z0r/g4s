@@ -5,7 +5,8 @@ import { SystemStatus } from './types/SystemStatus'
 
 type CommandOptions = {
 	methodToInvoke?: 'Arm' | 'Disarm',
-	panelId?: string,
+	panelId?: number,
+	partition?: 0 | 2,
 }
 
 class API {
@@ -16,12 +17,17 @@ class API {
 	constructor(private readonly username: string, private readonly password: string) {
 	}
 
-	async armPanel(panelId: string): Promise<void> {
+	async armPanel(panelId: number): Promise<void> {
 		const response = await this.invokeCommand({ panelId, methodToInvoke: 'Arm' })
 		if (response.status !== 200) throw new ArmError()
 	}
 
-	async disarmPanel(panelId: string): Promise<void> {
+	async nightArmPanel(panelId: number): Promise<void> {
+		const response = await this.invokeCommand({ panelId, methodToInvoke: 'Arm', partition: 2 })
+		if (response.status !== 200) throw new ArmError()
+	}
+
+	async disarmPanel(panelId: number): Promise<void> {
 		const response = await this.invokeCommand({ panelId, methodToInvoke: 'Disarm' })
 		if (response.status !== 200) throw new DisarmError()
 	}
@@ -29,16 +35,18 @@ class API {
 	async getState(): Promise<SystemStatus> {
 		const response = await fetch(`${this.BASE_URL}${this.SYSTEM_STATUS_URL}`, {
 			method: 'POST',
-			body: JSON.stringify({ email: this.username, password: this.password }),
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ username: this.username, password: this.password }),
 		})
 
-		const json: string = await response.json()
-		return JSON.parse(json) as SystemStatus
+		const systemStatus = await response.json()
+		return systemStatus as SystemStatus
 	}
 
 	private async invokeCommand(options: CommandOptions = {}) {
 		return fetch(`${this.BASE_URL}${this.COMMAND_URL}`, {
 			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
 				email: this.username,
 				password: this.password,

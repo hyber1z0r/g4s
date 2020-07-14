@@ -13,7 +13,6 @@ test('should invoke disarm command', async () => {
 	expect(fetch).toMatchSnapshot();
 })
 
-
 test('should invoke arm command', async () => {
 	(fetch as unknown as jest.Mock).mockResolvedValue(new Response(undefined, { status: 200}))
 
