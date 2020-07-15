@@ -1,6 +1,5 @@
 export enum ArmType {
-	STAY_ARM,
-	AWAY_ARM,
-	NIGHT_ARM,
-	DISARMED,
+	FULL_ARM = 0,
+	NIGHT_ARM = 1,
+	DISARMED = 3,
 }
