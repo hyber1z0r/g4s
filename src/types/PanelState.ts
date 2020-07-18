@@ -1,5 +1,7 @@
+import { ArmType } from './ArmType'
+
 export interface PanelState {
-	ArmType: number;
+	ArmType: ArmType;
 	ArmTypeChangedTime: Date;
 	ArmForcedState: number;
 	ArmDelayedState: number;

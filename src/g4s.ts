@@ -1,5 +1,7 @@
 import API from './api'
 import { ArmType } from './types/ArmType'
+import { PanelInfo } from './types/PanelInfo'
+import { StateDevice } from './types/StateDevice'
 
 class G4S {
 	private readonly api: API
@@ -20,14 +22,19 @@ class G4S {
 		return this.api.disarmPanel(panelId)
 	}
 
-	async getPanelId(): Promise<number> {
+	async getPanel(): Promise<PanelInfo> {
 		const systemStatus = await this.api.getState()
-		return systemStatus.panelInfo.PanelId
+		return systemStatus.panelInfo
 	}
 
 	async getArmType(): Promise<ArmType> {
 		const systemStatus = await this.api.getState()
 		return systemStatus.panelState.ArmType
+	}
+
+	async getDevices(): Promise<StateDevice[]> {
+		const systemStatus = await this.api.getState()
+		return systemStatus.stateDevices;
 	}
 }
 
