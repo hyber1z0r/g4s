@@ -38,6 +38,9 @@
   ],
   "author": "Jakob Gaard Andersen",
   "license": "MIT",
+	"dependencies": {
+    "node-fetch": "2.6.0"
+	},
   "devDependencies": {
     "@babel/core": "7.10.4",
     "@babel/preset-env": "7.10.4",
@@ -52,7 +55,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
-    "node-fetch": "2.6.0",
     "np": "6.3.2",
     "nyc": "^15.1.0",
     "rimraf": "^3.0.2",
