@@ -1,6 +1,6 @@
 {
   "name": "g4s",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "node.js module for using the g4s api",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -38,9 +38,9 @@
   ],
   "author": "Jakob Gaard Andersen",
   "license": "MIT",
-	"dependencies": {
+  "dependencies": {
     "node-fetch": "2.6.0"
-	},
+  },
   "devDependencies": {
     "@babel/core": "7.10.4",
     "@babel/preset-env": "7.10.4",
