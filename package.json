@@ -39,7 +39,7 @@
   "author": "Jakob Gaard Andersen",
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "2.6.0"
+    "node-fetch": "3.1.1"
   },
   "devDependencies": {
     "@babel/core": "7.10.4",
