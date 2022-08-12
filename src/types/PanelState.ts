@@ -1,14 +1,15 @@
-import { ArmType } from './ArmType'
+import { AlarmState } from './AlarmState';
+import { ArmType } from './ArmType';
 
 export interface PanelState {
 	ArmType: ArmType;
 	ArmTypeChangedTime: Date;
 	ArmForcedState: number;
 	ArmDelayedState: number;
-	AlarmState: number;
-	AlarmStateTime?: any;
+	AlarmState: AlarmState;
+	AlarmStateTime?: string;
 	Partition: number;
-	DeviceName?: any;
+	DeviceName: string | null;
 	ExitDelayArmInProcess: boolean;
 	EntryDelayArmInProcess: boolean;
 	ReceptionLevel: number;

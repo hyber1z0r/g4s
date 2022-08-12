@@ -1,7 +1,8 @@
 import API from './api';
-import { ArmType } from './types/ArmType';
-import { PanelInfo } from './types/PanelInfo';
-import { StateDevice } from './types/StateDevice';
+import { AlarmState } from './types/AlarmState';
+import type { ArmType } from './types/ArmType';
+import type { PanelInfo } from './types/PanelInfo';
+import type { StateDevice } from './types/StateDevice';
 
 class G4S {
 	private readonly api: API;
@@ -39,6 +40,11 @@ class G4S {
 	async getDevices(): Promise<StateDevice[]> {
 		const systemStatus = await this.api.getState();
 		return systemStatus.stateDevices;
+	}
+
+	async isAlarmTriggered(): Promise<boolean> {
+		const systemStatus = await this.api.getState();
+		return systemStatus.panelState.AlarmState === AlarmState.ALARM_TRIGGERED;
 	}
 }
 
