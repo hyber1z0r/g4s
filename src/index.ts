@@ -1,1 +1,1 @@
-export { default } from './g4s'
+export { default } from './g4s';
