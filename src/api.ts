@@ -10,7 +10,7 @@ type CommandOptions = {
 };
 
 class API {
-	private readonly BASE_URL = 'https://mit.g4severhome.dk/ESI.API/API/';
+	private readonly BASE_URL = 'https://w-mit.g4severhome.dk/ESI.API/API/';
 	private readonly COMMAND_URL = 'Commands/invokeAPI';
 	private readonly SYSTEM_STATUS_URL = 'systemstatus/getState';
 
