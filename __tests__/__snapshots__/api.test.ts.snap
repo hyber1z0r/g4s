@@ -4,7 +4,7 @@ exports[`should invoke arm command 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
-      "https://mit.g4severhome.dk/ESI.API/API/Commands/invokeAPI",
+      "https://w-mit.g4severhome.dk/ESI.API/API/Commands/invokeAPI",
       Object {
         "body": "{\\"email\\":\\"username\\",\\"password\\":\\"password\\",\\"panelId\\":103031,\\"methodToInvoke\\":\\"Arm\\"}",
         "headers": Object {
@@ -27,7 +27,7 @@ exports[`should invoke disarm command 1`] = `
 [MockFunction] {
   "calls": Array [
     Array [
-      "https://mit.g4severhome.dk/ESI.API/API/Commands/invokeAPI",
+      "https://w-mit.g4severhome.dk/ESI.API/API/Commands/invokeAPI",
       Object {
         "body": "{\\"email\\":\\"username\\",\\"password\\":\\"password\\",\\"panelId\\":103031,\\"methodToInvoke\\":\\"Disarm\\"}",
         "headers": Object {
